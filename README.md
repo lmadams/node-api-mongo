@@ -3,9 +3,8 @@ Node para backend contendo:
 - Mongoose para trabalhar com o MongoDB;
 - Validador manual de request;
 
+- Sendgrid para mandar e-mail;
+- Criptografia com MD5 e salt_key;
+- Storage de imagens no Azure (Storage);
 
-
-
-Parei no video 29 - BALTA.io
-
-https://www.youtube.com/watch?v=gsUBcOzemkc&index=29&list=PLHlHvK2lnJndvvycjBqQAbgEDqXxKLoqn
+-JsonWebToken para autenticação;
