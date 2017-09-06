@@ -10,4 +10,3 @@ Node para backend contendo:
 -JsonWebToken para autenticação;
 
 parei no video de Autorizações....
-https://www.youtube.com/watch?v=jMCtf4GJyZ4&index=37&list=PLHlHvK2lnJndvvycjBqQAbgEDqXxKLoqn

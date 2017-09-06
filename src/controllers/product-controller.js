@@ -1,8 +1,8 @@
 const repository = require('../repositories/product-repository');
 const ValidationContract = require('../validators/fluent-validator');
-const azureStorage = require('azure-storage');
-const config = require('../config');
-const guid = require('guid');
+// const azureStorage = require('azure-storage');
+// const config = require('../config');
+// const guid = require('guid');
 
 exports.get = async (req, res) => {
   try {
@@ -63,22 +63,24 @@ exports.post = async (req, res) => {
 
   try {
     // Cria o blog Service
-    const blobSvc = azureStorage.createBlobService(config.containerConnectionString);
+    // const blobSvc = azureStorage.createBlobService(config.containerConnectionString);
+    //
+    // let filename = `${guid.raw().toString()}.jpg`;
+    // const rawdata = req.body.image;
+    // const matches = rawdata.match(/^data:([A-Za-z-+]+);base64,(.+)$/);
+    // const type = matches[1];
+    // const buffer = Buffer.from(matches[2], 'base64');
+    //
+    // // Salva a imagem
+    // await blobSvc.createBlockBlobFromText('product-images', filename, buffer, {
+    //   contentType: type,
+    // }, (error) => {
+    //   if (error) {
+    //     filename = 'default-product.png';
+    //   }
+    // });
 
-    let filename = `${guid.raw().toString()}.jpg`;
-    const rawdata = req.body.image;
-    const matches = rawdata.match(/^data:([A-Za-z-+]+);base64,(.+)$/);
-    const type = matches[1];
-    const buffer = Buffer.from(matches[2], 'base64');
-
-    // Salva a imagem
-    await blobSvc.createBlockBlobFromText('product-images', filename, buffer, {
-      contentType: type,
-    }, (error) => {
-      if (error) {
-        filename = 'default-product.png';
-      }
-    });
+    const filename = 'default-product.png';
 
     await repository.create({
       title: req.body.title,

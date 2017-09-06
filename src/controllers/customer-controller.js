@@ -55,6 +55,7 @@ exports.authenticate = async (req, res) => {
       id: customer._id,
       email: customer.email,
       name: customer.name,
+      roles: customer.roles,
     });
 
     res.status(201).send({
@@ -89,6 +90,7 @@ exports.refreshToken = async (req, res) => {
       id: customer._id,
       email: customer.email,
       name: customer.name,
+      roles: customer.roles,
     });
 
     res.status(201).send({

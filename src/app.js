@@ -1,5 +1,3 @@
-
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -22,8 +20,17 @@ const productRoute = require('./routes/product-route');
 const customerRoute = require('./routes/customer-route');
 const orderRoute = require('./routes/order-route');
 
-app.use(bodyParser.json());
+app.use(bodyParser.json({
+  limit: '5mb',
+}));
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// Habilita o CORS
+app.use((req, res) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, x-access-token');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+});
 
 app.use('/', indexRoute);
 app.use('/products', productRoute);
