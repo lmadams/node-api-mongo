@@ -2,7 +2,7 @@ const repository = require('../repositories/customer-repository');
 const ValidationContract = require('../validators/fluent-validator');
 const md5 = require('md5');
 const emailService = require('../services/email-service');
-const authService = require('../auth-service');
+const authService = require('../services/auth-service');
 
 exports.post = async (req, res) => {
   const contract = new ValidationContract();

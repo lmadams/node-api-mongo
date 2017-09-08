@@ -2,7 +2,7 @@
 
 const repository = require('../repositories/order-repository');
 const guid = require('guid');
-const authService = require('../auth-service');
+const authService = require('../services/auth-service');
 
 exports.get = async (req, res) => {
   try {
